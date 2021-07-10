@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import Body from './include/Body'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer} from 'react-notifications';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
+import Home from './pages/Home'
+import CreateTodo from './pages/CreateTodo';
+import TodoList from './pages/TodoList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+        <Body>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/createtodo' component={CreateTodo} />
+            <Route exact path='/todolist' component={TodoList} />
+          </Switch>
+          <NotificationContainer/>
+        </Body>
+    </Router>
+    </>
   );
 }
 
