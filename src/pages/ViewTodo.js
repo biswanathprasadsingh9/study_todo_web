@@ -11,7 +11,7 @@ export default class ViewTodo extends Component {
 
     componentDidMount(){
 
-        axios.get(`http://localhost:5000/api/todo/${this.props.match.params.id}`)
+        axios.get(`https://study-todo-server.vercel.app/api/todo/${this.props.match.params.id}`)
         .then(response=>{
             if(response.data.response){
                 this.setState({

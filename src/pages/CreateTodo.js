@@ -33,7 +33,7 @@ export default class CreateTodo extends Component {
             loadingForm:true
         })
 
-        axios.post('http://localhost:5000/api/todo/',this.state)
+        axios.post('https://study-todo-server.vercel.app/api/todo/',this.state)
         .then(response=>{
             console.log(response.data)
             if(response.data.response){

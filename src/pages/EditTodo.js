@@ -15,7 +15,7 @@ export default class EditTodo extends Component {
 
 
     componentDidMount(){
-        axios.get(`http://localhost:5000/api/todo/${this.props.match.params.id}`)
+        axios.get(`https://study-todo-server.vercel.app/api/todo/${this.props.match.params.id}`)
         .then(response=>{
             console.log(response.data.data)
             if(response.data.response){
@@ -51,7 +51,7 @@ export default class EditTodo extends Component {
             loadingForm:true
         })
 
-        axios.post(`http://localhost:5000/api/todo/update/todo`,this.state)
+        axios.post(`https://study-todo-server.vercel.app/api/todo/update/todo`,this.state)
         .then(response=>{
             console.log(response.data)
             if(response.data.response){
