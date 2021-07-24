@@ -18,6 +18,11 @@ export default class Body extends Component {
                     <Menu.Item>
                     <Link exact to='/createtodo'><Button>Create Todo</Button></Link>
                     </Menu.Item>
+
+
+                    <Menu.Item>
+                    <Link exact to='/login'><Button>Logout</Button></Link>
+                    </Menu.Item>
                 </Menu>
                 <br />
                 <Container>
